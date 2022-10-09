@@ -1,0 +1,268 @@
+
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+body{
+    /*FIX ME*/
+    background: url(./img/bgg.png) no-repeat ;
+    background-size: cover;
+    font-family: 'Core Sans C' ;
+}
+
+/* HEADER */
+
+header{
+    display: flex;
+    padding: 40px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+header a, p {
+    color: #fff;
+}
+.contact a{
+    font-size: 20px;
+}
+.contact p{
+    margin-top: 5px;
+    filter: contrast(50%);
+}
+nav{
+    display: flex;
+    gap: 20px;
+    transition: all 2s;
+}
+
+.hoverLink{
+    animation: .7s hoverLink;
+}
+nav a{
+    /* animation: .7s hoverLink; */
+
+}
+
+@keyframes hoverLink{
+    0%{
+        opacity: 1;
+    }
+    25%{
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(10px);
+        opacity: 0;
+        
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+.burgerMenu{
+    position: relative;
+    width: 50px;
+
+}
+.burgerBtn{
+    width: 50px;
+    
+}
+.lines, 
+.lines::after,
+.lines::before{
+    position: absolute;
+    width: 48px;
+	height: 2px;
+    background-color: #fff;
+    transition: all .5s;
+}
+.lines{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.lines::after{
+    content: ' ';
+    top: 12px;
+}
+.lines::before{
+    content: ' ';
+    top: -12px;
+}
+
+
+.active .lines{
+    background-color: transparent;
+    z-index: 100;
+
+}
+.active .lines::before{
+    z-index: 100;
+    top: 0;
+    transform: rotate(45deg);
+
+}
+.active .lines::after{
+    z-index: 100;
+    top: 0;
+    transform: rotate(-45deg);
+    
+}
+.burgerNav{
+    padding: 80px;
+    position: fixed;
+    /* z-index: 10; */
+    display: flex;
+    height: 100%;
+    /* width: 100px; */
+    flex-flow: column;
+    overflow-y: auto;
+    background-color: #2a2a2a;
+    right: -100%;
+}
+
+.active .burgerNav{
+    top: 0;
+    right: 0;
+    animation: 1s overview;
+    transition: all .5s;
+}
+
+@keyframes overview {
+    from{
+        right: -100%;
+    }
+    to{
+        right: 0;
+    }
+}
+.burgerNav p{
+    padding: 30px;
+}
+.burgerNav img{
+    width: 300px;
+}
+
+/*MAIN*/
+
+main{
+    display: flex;
+    justify-content: space-between;
+    gap: 170px;
+}
+.social{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    align-items: center;
+}
+.social img{
+    height: 20px;
+    max-width: 20px;
+    
+}
+.complecs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+  
+.complecs a{
+    color: #fff;
+    filter: contrast(50%);
+    text-decoration-line: underline;
+    transition: all 0.5s;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+.complecs a:hover  {
+    filter: contrast(100%)!important;
+}
+
+.descOpacity {
+    animation: 3s descC!important;
+
+}
+@keyframes descC{
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+.descComplecs{
+    color: #fff;
+    opacity: 0;
+}
+.descComplecs p {
+    filter: brightness(50%);
+    margin-top: 10px;
+}
+.descComplecs img{
+    height: 230px;
+    width: 370px;
+    margin: 20px 0;
+    
+}
+.bannerTitle {
+    color: #fff;
+
+    line-height: 47px;
+}
+.bannerTitle h1{
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+.bannerTitle a{
+    color: #fff;
+    padding: 20px;
+}
+.mainBannerBtn{
+   
+    border: 1px solid #fff;
+    border-radius: 7px;
+    -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.mainBannerBtn:hover {
+    box-shadow: 0 0 40px 40px #fff inset;
+    color: #2a2a2a;
+  }
+.blockTwo{
+    display: flex;
+
+}
+
+.navBtn {
+    display: flex;
+    margin-right: 30px;
+
+}
+.navBtnL{
+    border: none!important;
+}
+.navBtn button {
+    width: 39px;
+    height: 39px;
+    background: none;
+    padding: auto;
+    border-radius: 100%;
+    border: 1px solid #fff;
+}
