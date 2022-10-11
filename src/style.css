@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'Core Sans C', sans-serif ;
+    src: url();
+}
 
 *,*::after,*::before{
     box-sizing: border-box;
@@ -9,10 +13,54 @@ a{
     cursor: pointer;
 }
 body{
-    /*FIX ME*/
-    background: url(./img/bgg.png) no-repeat ;
-    background-size: cover;
-    font-family: 'Core Sans C' ;
+   
+    font-family: 'Core Sans C', sans-serif ;
+    position: relative;
+    background: #000;
+}
+.background-video{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: .5;
+    transition: all 2s;
+}
+.notVisible{
+    opacity: 0;
+    animation: 2s slideVideoR;
+}
+
+@keyframes slideVideoR {
+    from{
+        /* z-index: 1; */
+        left: 100%;
+        /* opacity: 1; */
+    }
+    to{
+        left: 0%;
+        display: none;
+    }
+}
+.slideL{
+    opacity: 0;
+    animation: 2s slideVideoL;
+}
+@keyframes slideVideoL {
+    from{
+        /* z-index: 1; */
+        left: 0%;
+        /* opacity: 1; */
+    }
+    to{
+        left: 100%;
+        display: none;
+    }
 }
 
 /* HEADER */
@@ -41,11 +89,10 @@ nav{
     transition: all 2s;
 }
 
-/* .hoverLink{
+
+
+.navigation > span:hover{
     animation: .7s hoverLink;
-} */
-nav a:hover{
-    transition: .7s hoverLink;
 
 }
 
@@ -75,7 +122,7 @@ nav a:hover{
 .burgerMenu{
     position: relative;
     width: 50px;
-
+    margin-left: 20px;
 }
 .burgerBtn{
     width: 50px;
@@ -125,10 +172,8 @@ nav a:hover{
 .burgerNav{
     padding: 80px;
     position: fixed;
-    /* z-index: 10; */
     display: flex;
     height: 100%;
-    /* width: 100px; */
     flex-flow: column;
     overflow-y: auto;
     background-color: #2a2a2a;
@@ -140,6 +185,7 @@ nav a:hover{
     right: 0;
     animation: 1s overview;
     transition: all .5s;
+    z-index: 10;
 }
 
 @keyframes overview {
@@ -164,11 +210,16 @@ main{
     justify-content: space-between;
     gap: 170px;
 }
+aside>img{
+    width: 205px;
+}
 .social{
     display: flex;
     flex-direction: column;
+    gap: 30px;
     padding: 40px;
     align-items: center;
+    margin-top: 50px;
 }
 .social img{
     height: 20px;
@@ -182,21 +233,23 @@ main{
 }
   
 .complecs a{
-    color: #fff;
-    filter: contrast(50%);
+    color: rgba(255, 255, 255, 0.6);
+
     text-decoration-line: underline;
     transition: all 0.5s;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
+    padding: 5px;
 }
 .complecs a:hover  {
-    filter: contrast(100%)!important;
+    color: rgba(255, 255, 255);
+
 }
 
 .descOpacity {
-    animation: 3s descC!important;
-
+    animation: 3s descC;
+    opacity: 1;
 }
 @keyframes descC{
     0%{
@@ -208,10 +261,10 @@ main{
 }
 .descComplecs{
     color: #fff;
-    opacity: 0;
+    /* opacity: 0; */
 }
 .descComplecs p {
-    filter: brightness(50%);
+    color: rgb(255,255,255, 0.5);
     margin-top: 10px;
 }
 .descComplecs img{
@@ -222,7 +275,7 @@ main{
 }
 .bannerTitle {
     color: #fff;
-
+    margin-right: 40px;
     line-height: 47px;
 }
 .bannerTitle h1{
@@ -234,7 +287,6 @@ main{
     padding: 20px;
 }
 .mainBannerBtn{
-   
     border: 1px solid #fff;
     border-radius: 7px;
     -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
@@ -253,7 +305,6 @@ main{
 .navBtn {
     display: flex;
     margin-right: 30px;
-
 }
 .navBtnL{
     border: none!important;
@@ -264,5 +315,299 @@ main{
     background: none;
     padding: auto;
     border-radius: 100%;
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
+    border: none;
+
+}
+#wrap{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    border-radius: 50%;
+}
+#wrap::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(102, 102, 102, 0.5);
+    border-radius: 50%;
+}
+.box-left, .box-right{
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+}
+.box-left, .circle-left{
+    left: 0;
+}
+.box-right, .circle-right{
+    right: 0;
+}
+.circle-left, .circle-right{
+    width: 200%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px #fff solid;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+}   
+.circle-left{
+    border-top-color: transparent;
+    border-left-color: transparent;
+    transform: rotate(-45deg);
+    animation: circleRotate 4s linear forwards 4s ;
+}
+
+.circle-right{
+    border-bottom-color: transparent; 
+    border-right-color: transparent; 
+    transform: rotate(-45deg);
+    animation: circleRotate 4s linear forwards ;
+}
+@keyframes circleRotate{
+    from {transform: rotate(-45deg)}
+    to {transform: rotate(135deg)}
+}
+
+
+
+
+/*FOOTER*/
+footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+}
+.footerM{
+    display: flex;
+    padding: 40px;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.rooms{
+    display: flex;
+    flex-direction: column;
+}
+.footerBlock > p {
+    color: #fff;
+    margin-bottom: 14px;
+}
+.roomsBtn{
+    display: flex;
+    border-radius: 7px;
+    gap: 0;
+}
+.roomsBtn button{
+    padding: 20px;
+    color: #fff;
+    border: none;
+    background: rgba(255, 255, 255, 0.16);
+    transition: all .5s;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+.roomsBtn button:first-child, .rangeItem:first-child{
+    border-radius: 7px 0 0 7px;
+}
+.roomsBtn button:last-child, .rangeItem:last-child{
+    border-radius: 0 7px 7px 0;
+    border-right: none;
+}
+.roomsBtn button:hover{
+    background:rgba(255, 255, 255, 0.3);
+}
+.select{
+    color: #000!important;
+    background:#fff!important;
+}
+.areaBtn{
+    display: flex;
+    gap: 0;
+    
+}
+.area input{
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 5px;
+}
+.rangeItem{
+    display: flex; 
+    width: 135px;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.16);
+    box-sizing: border-box;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+.rangeItem input[type=number]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+.dropup select{
+    background: rgba(255, 255, 255, 0.16);
+    padding: 20px 15px;
+    color: #fff;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    width: 270px;
+}
+.dropup select::-ms-expand{
+    padding-right: 10px;
+    display: none;
+}
+
+
+/* .price>p::after{
+    content: "\20BD";
+} */
+
+
+.settings{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    height: 56px;
+    border-radius: 7px;
+    margin-left: 25px;
+    margin-top: 30px;
+    gap: 15px;
+    cursor: pointer;
+    transition: all .5s;
+}
+.settings:hover{
+    background: rgba(255, 255, 255, 0.16)
+}
+.settings button{
+    border: none;
+    background: none;
+}
+.settings img{
+    max-width: 16px;
+    max-height: 16px;
+}
+.settings p {
+    flex-wrap: wrap;
+}
+.mainBtn{
+    color: #fff;
+    background: #D90002;
+    padding: 20px;
+    border-radius: 7px;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: all .5s;
+}
+.mainBtn:hover{
+    background: #fff;
+    color: #D90002;
+}
+
+.phoneMobile,
+.footerMobile,
+.sideMobile{
+    display: none;
+}
+@media screen and (max-width: 450px) {
+    body{
+        background: url(./img/bg.png) no-repeat 65% 40%;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+    }
+    main{
+        display: block;
+    }
+    .burgerNav{
+        padding: 10px;
+    }
+    header{
+        margin-bottom: 0;
+        padding: 0;
+    }
+    .footerMobile{
+        display: block;
+    }
+    .bannerTitle h1{
+        font-size: 26px;
+        line-height: 31px;
+        letter-spacing: -0.02em;
+        font-weight: 400;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+    .bannerBtns{
+        display: flex;
+        flex-direction: column;
+    }
+    .bannerBtns a{
+        width: 80%;
+        padding: 10px 15px;
+    }
+    .phoneMobile{
+        display: block;
+    }
+    aside{
+        display: none;
+    }
+    .navigation .navItem,
+      .contact p,
+      .phoneMain, .footerM,
+      .background-video, .sideM,
+      .blockOne,.navBtn, .social{
+        display: none;
+    }
+    footer{
+        padding: 20px;
+        width: 90%;
+        display: block;
+    }
+    .search{
+        background: rgba(255, 255, 255, 0.16);
+        display: flex;
+        justify-content: space-between;
+        border-radius: 7px;
+        width: 100%;
+    }
+    .search input{
+        padding: 20px;
+        border: none;
+        outline: none;
+        background: none;
+        color: #fff;
+        width: 100%;
+    }
+    .search input::placeholder{
+        color: #fff;
+    }
+    .search button{
+        background: none;
+        border: none;
+    }
+    .search img{
+        padding-right: 20px;
+    }
+    .sideMobile{
+        display: block;
+        position: relative;
+    }
+    .sideMobile img{
+        position: absolute;
+        right: -20px;
+        top: 100px;
+    }
 }

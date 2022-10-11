@@ -4,37 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/fonts/tabler-icons.min.css" />
     <link rel="stylesheet" href="./src/style.css">
     <title>Life devepoment</title>
 </head>
 <body>
+<video class="background-video" id="v1"   autoplay loop muted>
+        <source src="./src/videoBg/dog1.mp4">
+</video>
+<video class="background-video notVisible" id="v2"  autoplay loop muted>
+    <source src="./src/videoBg/flower.mp4">
+</video>
     <header>
-            <img class="logoImg" src="./src/img/Logo.svg" alt="">
-        <div class="contact">
-            <a href="tel:+8 800 222-37-90">8 800 222-37-90</a>
-            <p>Работаем ежедневно с 10:00 до 20:00</p>
-        </div>
-        <nav class="navigation">
-            <a class="navItem" href="#">Квартиры</a>
-            <a class="navItem" href="#">Ипотека</a>
-            <a class="navItem" href="#">Коммерция</a>
-            <a class="navItem" href="#">Управляющая система</a>
-            <div class="burgerMenu">
-                <a href="#" class="burgerBtn">
-                    <span class="lines"></span>
-                    <div class="burgerNav">
-                        <p>тут пока ничего нет, кроме кота :3</p>
-                        <img src="./src/img/kotik.png" alt="">
-                    </div>
-                </a>
 
-              </div>
-        </nav>
+
+            <img class="logoImg" src="./src/icons/logo.svg" alt="">
+            <div class="contact">
+                <a class="phoneMain" href="tel:+8 800 222-37-90">8 800 222-37-90</a>
+                <p>Работаем ежедневно с 10:00 до 20:00</p>
+            </div>
+            <nav class="navigation">
+                <span><a class="navItem" href="#">Квартиры</a></span>
+                <span><a class="navItem" href="#">Ипотека</a></span>    
+                <span><a class="navItem" href="#">Коммерция</a></span>  
+                <span><a class="navItem" href="#">Управляющая система</a></span>
+                <a href="tel:+8 800 222-37-90"><img class="phoneMobile" src="./src/icons/phone.svg" alt=""></a>
+                <div class="burgerMenu">
+
+                    <a href="#" class="burgerBtn">
+                        <span class="lines"></span>
+                        <div class="burgerNav">
+                            <p>тут пока ничего нет, кроме кота :3</p>
+                            <img src="./src/img/kotik.png" alt="">
+                        </div>
+                    </a>
+                    
+                </div>
+            </nav>
+
+
     </header>
     <main>
         <aside>
-            <img src="./src/img/side.png" alt="">
+            <img class="sideM" src="./src/img/side.png" alt="">
+            <img class="sideMobile" src="./src/img/sideMobile.png" alt="">
             <div class="social">
                 <a><img src="./src/icons/facebook.svg" alt=""></a>
                 <a><img src="./src/icons/insta.svg" alt=""></a>
@@ -66,7 +78,16 @@
             <div class="blockTwo">
                 <div class="navBtn">
                     <button class="navBtnL"><img src="./src/img/arrowL.svg" alt=""></button>
-                    <button><img src="./src/img/arrowR.svg" alt=""></button>
+                        <div id="wrap">
+                            <div class="box-left">
+                                <div class="circle-left"></div>
+                            </div>
+                            <div class="box-right">
+                                <div class="circle-right"></div>
+                            </div>
+                            <button><img src="./src/img/arrowR.svg" alt=""></button>
+                        </div>
+                   
                 </div>
                 <div class="bannerTitle">
                     <h1>Стильная архитектура и виды из окон будущей квартиры не оставят равнодушных</h1>
@@ -77,11 +98,85 @@
                 </div>
 
         </div>
-
+        <div class="sideMobile">
+            <img src="./src/img/sideMobile.png" alt="">
+        </div>
     </main>
     <footer>
+<div class="footerM">
+        <div class="rooms footerBlock">
+            <p>Количество комнат</p>
+            <div class="roomsBtn ">
+                <button class="select">cтудия</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+            </div>
+        </div>
 
+        <div class="area footerBlock">
+            <p>Площадь</p>
+            <div class="areaBtn">
+                <div class="rangeItem">
+                    <p>от</p>
+                    <input type="number" value="32" min="0" max="9999" name="" id="">
+                    <p>м²</p>
+                </div>
+                <div class="rangeItem">
+                    <p>до</p>
+                    <input type="number" value="186" min="0" max="9999" name="" id="">
+                    <p>м²</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="area footerBlock price">
+            <p>Стоимость, млн P</p>
+            <div class="areaBtn">
+                <div class="rangeItem">
+                    <p>от</p>
+                    <input type="number" value="1.5" min="0" max="9999" name="" id="">
+                </div>
+                <div class="rangeItem">
+                    <p>до</p>
+                    <input type="number" value="17.5" min="0" max="9999" name="" id="">
+                </div>
+            </div>
+        </div>
+
+        <div class="lifeComplesc footerBlock">
+            <p>Жилой комплекс</p>
+            <div class="dropup">
+                <select name="" id="">
+                    <option>Северный парк</option>
+                    <option>Ренесанс</option>
+                    <option>Станция Столичная</option>
+                    <option>Компасс сити</option>
+                    <option>Лето</option>
+                    <option>Бруклин</option>
+                    <option>Сказочный сад</option>
+                    <option>Монблан</option>
+                    <option>Краски</option>
+                </select>
+            </div>
+        </div> 
+        <div class="settings ">
+            <img src="./src/icons/settings.svg" alt="">
+            <p>Еще <br> фильтры</p>
+        </div>
+        <div >
+            <button class="mainBtn">Показать 120 квартир</button>
+        </div>
+    </div>
+    <div class="footerMobile">
+        <div class="search">
+            <input type="search" placeholder="Подобрать квартиру">
+            <button type="submit"><img src="./src/icons/Search.svg" alt=""></button>
+        </div>
+    </div>
     </footer>
-    <script src="./main.js"></script>
+    <script src="./src/js/main.js"></script>
 </body>
 </html>
