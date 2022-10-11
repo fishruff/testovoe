@@ -93,7 +93,7 @@
                     <h1>Стильная архитектура и виды из окон будущей квартиры не оставят равнодушных</h1>
                     <div class="bannerBtns">
                         <a href="#" class="mainBannerBtn">+ Выбрать квартиру</a>
-                        <a href="#">Купить квартиру онлайн <i class="ti ti-arrow-bar-to-right"></i></a>
+                        <a href="#">Купить квартиру онлайн <img src="./src/img/arrowR.svg" alt=""></a>
                     </div>
                 </div>
 
@@ -118,31 +118,45 @@
         <div class="area footerBlock">
             <p>Площадь</p>
             <div class="areaBtn">
-                <div class="rangeItem">
+                <div class="rangeItem areaI" >
                     <p>от</p>
-                    <input type="number" value="32" min="0" max="9999" name="" id="">
+                    <input type="number" value="32" min="0" max="1000" name="" id="">
                     <p>м²</p>
                 </div>
-                <div class="rangeItem">
+                <div class="rangeItem areaI">
                     <p>до</p>
-                    <input type="number" value="186" min="0" max="9999" name="" id="">
+                    <input type="number" value="186" min="0" max="1000" name="" id="">
                     <p>м²</p>
                 </div>
             </div>
-
+            <div class="slider">
+                <div class="progress"></div>
+            </div>
+            <div class="rangeInput areaI">
+                <input type="range" class="range-min" min="0" max="1000" value="250" step="10" name="" id="">
+                <input type="range" class="range-msx" min="0" max="1000" value="750" step="10" name="" id="">
+            </div>
         </div>
+        
         
         <div class="area footerBlock price">
             <p>Стоимость, млн P</p>
             <div class="areaBtn">
-                <div class="rangeItem">
+                <div class="rangeItem priceO">
                     <p>от</p>
-                    <input type="number" value="1.5" min="0" max="9999" name="" id="">
+                    <input type="number" value="1.5" min="0" max="30" name="" id="">
                 </div>
-                <div class="rangeItem">
+                <div class="rangeItem priceO">
                     <p>до</p>
-                    <input type="number" value="17.5" min="0" max="9999" name="" id="">
+                    <input type="number" value="17.5" min="0" max="30" name="" id="">
                 </div>
+            </div>
+            <div class="slider priceR">
+                <div class="progress"></div>
+            </div>
+            <div class="rangeInput priceI">
+                <input type="range" class="range-min" min="0" max="30" value="7" step="0.5" name="" id="">
+                <input type="range" class="range-msx" min="0" max="30" value="21" step="0.5" name="" id="">
             </div>
         </div>
 
@@ -169,7 +183,7 @@
         <div >
             <button class="mainBtn">Показать 120 квартир</button>
         </div>
-    </div>
+    </div></div>
     <div class="footerMobile">
         <div class="search">
             <input type="search" placeholder="Подобрать квартиру">
