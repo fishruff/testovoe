@@ -1,7 +1,8 @@
+
 @font-face {
-    font-family: 'Core Sans C', sans-serif ;
+    font-family: 'Core Sans C';
     src: url(./fonts/CoreSansC/CoreSansC-55Medium.ttf);
-}
+   }
 
 *,*::after,*::before{
     box-sizing: border-box;
@@ -375,10 +376,8 @@ aside>img{
     to {transform: rotate(135deg)}
 }
 
-
-
-
 /*FOOTER*/
+
 footer{
     position: fixed;
     width: 100%;
@@ -474,8 +473,6 @@ footer{
 /* .price>p::after{
     content: "\20BD";
 } */
-
-
 .settings{
     border: 1px solid rgba(255, 255, 255, 0.3);
     display: flex;
@@ -518,9 +515,6 @@ footer{
     background: #fff;
     color: #D90002;
 }
-
-
-
 .slider{
     height: 5px;
     position: relative;
@@ -598,7 +592,7 @@ footer{
         margin-bottom: 0;
         padding: 0;
     }
-    .footerMobile{
+    .footerMobile, .phoneMobile{
         display: block;
     }
     .bannerTitle h1{
@@ -617,17 +611,11 @@ footer{
         width: 80%;
         padding: 10px 15px;
     }
-    .phoneMobile{
-        display: block;
-    }
-    aside{
-        display: none;
-    }
     .navigation .navItem,
       .contact p,
       .phoneMain, .footerM,
       .background-video, .sideM,
-      .blockOne,.navBtn, .social{
+      .blockOne,.navBtn, .social, aside{
         display: none;
     }
     footer{
