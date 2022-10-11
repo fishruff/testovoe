@@ -550,7 +550,7 @@ footer{
     pointer-events: auto;
     -webkit-appearance: none;
     box-shadow: 0 0 6px rgba(0,0,0,0.05);
-    /* transform: translateX(-3px); */
+    transform: translateY(-3px);
   }
   input[type="range"]::-moz-range-thumb{
     height: 17px;
