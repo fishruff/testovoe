@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Core Sans C', sans-serif ;
-    src: url();
+    src: url(./fonts/CoreSansC/CoreSansC-55Medium.ttf);
 }
 
 *,*::after,*::before{
