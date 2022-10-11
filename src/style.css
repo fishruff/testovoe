@@ -90,10 +90,12 @@ nav{
 
 
 
-.navigation > span:hover{
-    animation: .7s hoverLink;
-
-}
+.navigation > span:hover a {
+    animation: 0.7s hoverLink;
+   }
+   .navigation a {
+    display: inline-block;
+  }
 
 @keyframes hoverLink{
     0%{
@@ -554,6 +556,7 @@ footer{
     pointer-events: auto;
     -webkit-appearance: none;
     box-shadow: 0 0 6px rgba(0,0,0,0.05);
+    /* transform: translateX(-3px); */
   }
   input[type="range"]::-moz-range-thumb{
     height: 17px;
@@ -566,12 +569,12 @@ footer{
     box-shadow: 0 0 6px rgba(0,0,0,0.05);
   }
 
-
-
-
-
-
-
+  .rangeInput input:first-child{
+    transform: translateX(-6px);
+  }
+  .rangeInput input:last-child{
+    transform: translateX(6px);
+  }
 
 .phoneMobile,
 .footerMobile,
